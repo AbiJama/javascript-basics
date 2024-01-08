@@ -2,13 +2,7 @@ const express = require('express');
 
 const booleanRouter = express.Router();
 
-// eslint-disable-next-line prettier/prettier
-const {
-  negate,
-  truthiness,
-  isOdd,
-  startsWith,
-} = require('../lib/src/booleans');
+const { negate, truthiness, isOdd, startsWith } = require('../lib/src/booleans');
 
 booleanRouter.post('/negate', (req, res) => {
   res.status(200).send({ result: negate(req.body.value) });
