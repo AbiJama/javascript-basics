@@ -1,17 +1,17 @@
 const express = require('express');
 
+const stringsRouter = require('./routes/strings');
+const numbersRouter = require('./routes/numbers');
+const booleanRouter = require('./routes/booleans');
+const arraysRouter = require('./routes/arrays');
+
 const app = express();
 
 app.use(express.json());
 
-const stringsR = require('./routes/strings');
-const numbersR = require('./routes/numbers');
-const booleanR = require('./routes/booleans');
-const arraysR = require('./routes/arrays');
-
-app.use('/strings', stringsR);
-app.use('/numbers', numbersR);
-app.use('/booleans', booleanR);
-app.use('/arrays', arraysR);
+app.use('/strings', stringsRouter);
+app.use('/numbers', numbersRouter);
+app.use('/booleans', booleanRouter);
+app.use('/arrays', arraysRouter);
 
 module.exports = app;

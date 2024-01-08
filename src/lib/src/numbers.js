@@ -20,23 +20,23 @@ const power = (a, b) => {
 
 const round = (a, b, c) => {
   return Math.round(a, b, c);
-}
+};
 
 const roundUp = (a, b, c) => {
   return Math.ceil(a, b, c);
-}
+};
 
 const roundDown = (a, b, c) => {
   return Math.floor(a, b, c);
-}
+};
 
 const absolute = (a, b, c) => {
   return Math.abs(a, b, c);
-}
+};
 
 const quotient = (a, b) => {
   return Math.trunc(a / b);
-}
+};
 
 const remainder = (a, b) => {
   return a % b;
@@ -53,5 +53,5 @@ module.exports = {
   roundDown,
   absolute,
   quotient,
-  remainder
-}
+  remainder,
+};

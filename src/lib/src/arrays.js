@@ -30,9 +30,14 @@ const numbersToStrings = numbers => {
 
 const uppercaseWordsInArray = strings => {
   return strings.map(text => text.toUpperCase());
-}
+};
 const reverseWordsInArray = strings => {
-  return strings.map(text => text .split('') .reverse('') .join(''));
+  return strings.map(text =>
+    text
+      .split('')
+      .reverse('')
+      .join(''),
+  );
 };
 
 const onlyEven = numbers => {
@@ -52,7 +57,7 @@ const elementsStartingWithAVowel = strings => {
     const firstChar = str.charAt(0).toLowerCase();
     return vowels.includes(firstChar);
   });
-}
+};
 
 const removeSpaces = string => {
   return string.split(' ').join('');
@@ -65,7 +70,7 @@ const sumNumbers = numbers => {
 };
 
 const sortByLastLetter = strings => {
-  return strings.sort((a,b)=>a.charCodeAt(a.length-1)-b.charCodeAt(b.length-1));
+  return strings.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
 };
 
 module.exports = {
@@ -83,5 +88,5 @@ module.exports = {
   elementsStartingWithAVowel,
   removeSpaces,
   sumNumbers,
-  sortByLastLetter
+  sortByLastLetter,
 };
