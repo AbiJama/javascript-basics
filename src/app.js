@@ -1,25 +1,17 @@
 const express = require('express');
-const { sayHello, uppercase, lowercase, firstCharacters } = require('./lib/src/strings');
 
 const app = express();
 
-app.get('/strings/hello/:string', (req, res) => {
-  res.status(200).json({ result: sayHello(req.params.string) });
-});
+app.use(express.json());
 
-app.get('/strings/upper/:string', (req, res) => {
-  res.status(200).json({ result: uppercase(req.params.string) });
-});
+const stringsR = require('./routes/strings');
+const numbersR = require('./routes/numbers');
+const booleanR = require('./routes/booleans');
+const arraysR = require('./routes/arrays');
 
-app.get('/strings/lower/:string', (req, res) => {
-  res.status(200).json({ result: lowercase(req.params.string) });
-});
-
-app.get('/strings/first-characters/:string', (req, res) => {
-  const length = req.query.length || 1;
-  const inputString = req.params.string;
-
-  res.status(200).json({ result: firstCharacters(inputString, length) });
-});
+app.use('/strings', stringsR);
+app.use('/numbers', numbersR);
+app.use('/booleans', booleanR);
+app.use('/arrays', arraysR);
 
 module.exports = app;
